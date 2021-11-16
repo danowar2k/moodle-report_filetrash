@@ -36,6 +36,7 @@ $PAGE->set_context($context);
 require_login(null, false);
 require_capability('report/filetrash:view', $context);
 raise_memory_limit(MEMORY_HUGE);
+core_php_time_limit::raise();
 
 if ($confirmdelete) {
     $deleteurl = new moodle_url('/report/filetrash/delete.php', array('confirmdelete' => $confirmdelete));
